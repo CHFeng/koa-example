@@ -1,0 +1,11 @@
+version: '2.1'
+
+services:
+    meep-shop-exam:
+        restart: always
+        image: meep-shop-exam:latest
+        ports:
+            - 3000:3000
+        volumes:
+            # mount transaction log on the host
+            - /tmp/transaction_log.txt:/app/transaction_log.txt
